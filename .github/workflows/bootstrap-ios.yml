@@ -1,0 +1,56 @@
+name: Bootstrap Campo iOS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/bootstrap-ios.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout iOS repository
+        uses: actions/checkout@v4
+
+      - name: Clone current Campo web source
+        run: git clone --depth 1 --branch main https://github.com/norbertown02/nutrialle-campo.git /tmp/campo-web
+
+      - name: Copy current application source
+        run: |
+          rsync -a --delete \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='README.md' \
+            --exclude='package.json' \
+            --exclude='package-lock.json' \
+            --exclude='capacitor.config.ts' \
+            --exclude='ios/' \
+            /tmp/campo-web/ ./
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build web app
+        run: npm run build
+
+      - name: Create iOS native project
+        run: |
+          rm -rf ios
+          npx cap add ios
+          npx cap sync ios
+
+      - name: Commit imported source and iOS project
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+          else
+            git commit -m 'Import Campo main and generate Capacitor iOS project'
+            git push origin main
+          fi
