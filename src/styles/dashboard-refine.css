@@ -1,0 +1,72 @@
+/* Refinamento tipográfico somente visual — nenhuma estrutura ou dado é alterado. */
+.dash-page,
+.dash-card,
+.dash-kpi,
+.dashv2-period-card,
+.dash-compare-table,
+.dash-ranking,
+.dash-goal {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.dash-hero h1 {
+  font-weight: 650 !important;
+  letter-spacing: -.65px !important;
+}
+.dash-hero p { font-weight: 350 !important; }
+
+.dashv2-period-tabs button { font-weight: 550 !important; }
+.dashv2-selects label > span { font-weight: 500 !important; letter-spacing: .35px !important; }
+.dashv2-selects select { font-weight: 450 !important; }
+.dashv2-period-summary { font-weight: 450 !important; }
+
+.dash-kpi small { font-weight: 500 !important; }
+.dash-kpi strong { font-weight: 650 !important; }
+.dash-kpi em { font-weight: 400 !important; }
+
+.dash-card-head h2 {
+  font-weight: 600 !important;
+  letter-spacing: -.2px !important;
+}
+.dash-card-head p,
+.dash-card-head span {
+  font-weight: 400 !important;
+}
+
+.dashv2-axis-label,
+.dashv2-x-label,
+.dashv2-chart-legend {
+  font-weight: 400 !important;
+}
+.dashv2-tooltip small,
+.dashv2-tooltip span {
+  font-weight: 400 !important;
+}
+.dashv2-tooltip strong {
+  font-weight: 600 !important;
+}
+
+.dash-legend-row strong { font-weight: 500 !important; }
+.dash-legend-row em { font-weight: 450 !important; }
+
+.dash-funnel-info { font-weight: 350 !important; }
+.dash-funnel-info strong { font-weight: 550 !important; }
+
+.dash-compare-head { font-weight: 400 !important; }
+.dash-compare-row strong { font-weight: 550 !important; }
+.dash-compare-row span { font-weight: 400 !important; }
+.dash-compare-row em { font-weight: 550 !important; }
+
+.dash-rank-number { font-weight: 550 !important; }
+.dash-rank-title strong { font-weight: 500 !important; }
+.dash-rank-title span { font-weight: 500 !important; }
+.dashv2-ranking-sub { font-weight: 350 !important; }
+
+.dash-goal span { font-weight: 350 !important; }
+.dash-goal strong,
+.dash-goal em { font-weight: 600 !important; }
+
+.dash-insight,
+.dash-insights { font-weight: 350 !important; }
